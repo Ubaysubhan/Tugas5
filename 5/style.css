@@ -1,0 +1,282 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    line-height: 1.6;
+}
+
+main, header {
+    font-family: 'Noto Sans', sans-serif !important;
+}
+
+img{
+    max-width: 100%;
+    display:block;
+    size:50%;
+}
+
+h1,
+h2,
+h3,
+p{
+    margin :0;
+}
+
+.container{
+    width: 90%;
+    max-width: 80em;
+    margin: 0 auto;
+}
+
+.split{
+    display: flex;
+    flex-wrap: wrap;
+    gap:2em;
+    justify-content: center;
+   
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none ;
+    padding: .5em 1.25em;
+    background: red;
+    color: var(--clr-text,black) ;
+    font-weight: 700;
+    text-transform: uppercase;
+    background:var(--clr-accent,red);
+    font: size 1.125rem;
+    border-radius:.25em;
+    transition: 
+    transform 250ms ease-in-out,
+    opacity 175ms linear;
+}
+
+.btn:hover,
+.btn:focus{
+    transform:scale(1.1);
+    opacity: .9;
+}
+
+.product__description {
+    font-size: 1em;
+}
+
+.primary-title{
+    font-size: 4rem;
+    font-size :clamp(3rem,calc( 5vw +1rem),4.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    color: red;
+}
+
+.section-title{
+    text-align: center;
+    font-size:clamp(2.5rem, calc(5vw + 1rem),4rem);
+    line-height: 1;
+    color:red;
+    margin-bottom: 5rem;
+}
+
+section{
+    padding-top:8em;
+}
+.hero{
+    color: navyblue;
+    text-align: center;
+    padding: 15em 0;
+    background-image: url(hhe.jpeg),
+    radial-gradient(#444, #111);
+    background-size: 100%;
+
+}
+
+.spacing >*+*{
+    margin-top: var(--spacer,2rem)
+}
+
+
+.featured__item{
+display: block;
+position: relative;
+transform: scale(.85);
+transition: transform 250ms ease-in-out;
+text-decoration: none ;
+text-align: center;
+color: black;
+line-height:1.2;
+    }
+
+    
+
+    .featured__item:hover,
+    .featured__item:focus {
+        transform: scale(1);
+    }
+
+.featured {
+        background: white;
+    }
+
+.featured__item:after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left:10%;
+    padding: 75% 75% 0 0 ;
+    border-radius: 50%;
+    background:red;
+    z-index: -1;
+}
+
+
+.featured__img{
+    width:15em;
+    height:15em;
+}
+
+.featured__item:hover .featured__details,
+.featured__item:focus .featured__details{
+    opacity: 1;
+}
+
+.featured__details{
+    opacity: 0;
+    transition: opacity 550ms linear;
+    text-shadow: 0 0 2em rgba(#fff,1);
+}
+.featured__details span{
+    display:block ;
+    font-weight:700;
+    font-size:2.5rem;
+}
+
+.badeh{
+    display: flex ;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e50914, #f5f5f1);
+    
+}
+
+.container-form{
+    max-width: 1800px;
+    width: 100%;
+    background:#fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+
+}
+
+.container-form .title{
+font-size: 25px;
+font-weight:800;
+position: relative;
+}
+
+.container .title::before{
+    content: "";
+    position: absolute;
+    height:3px;
+    width:30px;
+    background-color: #9b59b6;
+}
+.container-form form .user-details{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+form .user-details .input-box{
+    margin:20px 0 12px 0;
+    width: calc(100% / 2 - 20px);
+    
+}
+.user-details .input-box input .details{
+    font-weight: 500;
+    margin-bottom:5px;
+}
+.user-details .input-box input{
+    height:45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid red;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3 ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color:#e50914;
+}
+
+form .transmission-details .transmission-title{
+    font-size:20px;
+    font-weight:500;
+}
+form .transmission-details .category{
+    display: flex;
+    width:30%;
+    margin: 14px 0;
+    background: white;
+    justify-content: space-between;
+}
+
+.transmission-details .category label{
+     display: flex;
+     align-items: center;
+}
+.transmission-details .category .dot{
+     height:18px;
+     width:18px;
+     background:#d9d9d9;
+     border-radius: 50%;
+     margin-right: 10px;
+     border:5px solid transparent;
+     transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+    border-color: #d9d9d9;
+    background: red;
+}
+
+form input[type="radio"]{
+    display:none;
+}
+
+form .button{
+    height:45px;
+    margin: 45px 0;
+}
+
+form .button input{
+    height: 100%;
+    width:100%;
+    outline:none;
+    color:#fff;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #e50914, #f5f5f1);
+    color: black;
+}
+.form-control {
+    display: flex;
+    font-weight: bold;
+    font-size:x-large;
+    border: #013880 1px solid;
+}
